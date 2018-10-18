@@ -359,7 +359,6 @@
       _btn.addEventListener('click', function(event) {
         event.stopPropagation();
 
-        
 
         // Support DM_download
         if (typeof GM_download !== 'undefined') {

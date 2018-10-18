@@ -1,7 +1,7 @@
 /*
   Common function
 */
-Element.prototype.parents = function(selector) {
+Element.prototype.parents = function (selector) {
   // Vanilla JS jQuery.parents() realisation
   // https://gist.github.com/ziggi/2f15832b57398649ee9b
 
@@ -53,7 +53,7 @@ if (window.location.pathname.match('/p/')) {
     Dialog
   */
   else {
-    setTimeout(function() {
+    setTimeout(function () {
       if (document.querySelector('div[role="dialog"]').querySelector('article')) {
         _box_detail = document.querySelector('div[role="dialog"]').querySelector('article');
         findMedia(_box_detail);
@@ -66,7 +66,7 @@ if (window.location.pathname.match('/p/')) {
 
 /*  Stories page */
 if (window.location.pathname.match('/stories/')) {
-  setTimeout(function() {
+  setTimeout(function () {
     var _box_story = document.querySelector('#react-root > section div.yS4wN');
 
     if (_box_story) {
@@ -77,10 +77,11 @@ if (window.location.pathname.match('/stories/')) {
 
 
 function findMedia(box, way) {
-  var _box = box, _way = way;
+  var _box = box,
+    _way = way;
   var _parent, _url, _username;
 
-  _box.addEventListener('mouseover', function(event) {
+  _box.addEventListener('mouseover', function (event) {
 
     /*
       Picture
@@ -180,18 +181,8 @@ function addBtn(parent, url, username) {
     _btn.className = 'downloadBtn';
   }
 
-  _btn.addEventListener('click', function(event) {
+  _btn.addEventListener('click', function (event) {
     event.stopPropagation();
-
-    console.log("Download Start");
-
-    const manifest = browser.runtime.getManifest();
-
-    const operation = {
-      type: 'basic',
-      title: manifest.name,
-      iconUrl: browser.runtime.getUrl(manifest.icons[48]),
-    }
 
     // Download
     chrome.runtime.sendMessage({
@@ -199,8 +190,7 @@ function addBtn(parent, url, username) {
       url: _url,
       filename: _filename
     });
-    operation.message = ("Start Downloading...");
-    browser.notification.create(operation);
+    
   }, false);
 
   _parent.appendChild(_btn);
