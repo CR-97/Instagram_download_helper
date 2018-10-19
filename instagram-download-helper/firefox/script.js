@@ -2,8 +2,6 @@
   Common function
 */
 Element.prototype.parents = function (selector) {
-  // Vanilla JS jQuery.parents() realisation
-  // https://gist.github.com/ziggi/2f15832b57398649ee9b
 
   var elements = [];
   var elem = this;
