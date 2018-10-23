@@ -1,5 +1,6 @@
 const manifest = browser.runtime.getManifest();
 
+//Notification  for downloading
 const notification = {
   type: 'basic',
   title: manifest.name,

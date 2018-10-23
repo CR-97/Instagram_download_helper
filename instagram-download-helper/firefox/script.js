@@ -161,6 +161,7 @@ function findMedia(box, way) {
   });
 }
 
+// Donwload button
 function addBtn(parent, url, username) {
   var _parent = parent;
   var _url = url.indexOf('?') >= 0 ? url.substring(0, url.indexOf('?')) : url;
